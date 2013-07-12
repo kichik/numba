@@ -62,8 +62,9 @@ utility_funcs = list(object_to_numeric.itervalues()) + [
         "lookup_method", void_p(void_pp, uint64, char.pointer())),
     UtilityFunction.load(
         "Raise", int_(*[void_p] * 4),
-        badval=-1,
-    ),
+        badval=-1),
+    UtilityFunction.load("datetime2long", ulong(object_)),
+    UtilityFunction.load("long2datetime", object_(ulong)),
 ]
 
 def default_utility_library(context):
